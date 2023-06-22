@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "version": "7.54.0",
+  "name": "@sentry-internal/overhead",
+  "main": "lib/index.js",
+  "bin": {
+    "sentry-overhead": "./bin/cli.mjs"
+  },
+  "author": "Sentry",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev:collect": "ts-node-esm ./configs/dev/collect.ts",
+    "dev:process": "ts-node-esm ./configs/dev/process.ts",
+    "dev:run:replay": "npx chrome ./test-apps/booking-app/with-replay.html",
+    "ci:collect": "ts-node-esm ./configs/ci/collect.ts",
+    "ci:process": "ts-node-esm ./configs/ci/process.ts",
+    "fix": "run-s fix:eslint fix:prettier",
+    "fix:eslint": "eslint . --format stylish --fix",
+    "fix:prettier": "prettier --write \"{src,test-apps,configs}/**/*.{ts,js,html,css}\"",
+    "lint": "run-s lint:prettier lint:eslint",
+    "lint:eslint": "eslint . --format stylish",
+    "lint:prettier": "prettier --check \"{src,test-apps,configs}/**/*.{ts,js,html,css}\""
+  },
+  "dependencies": {
+    "@types/node": "^18.11.17",
+    "axios": "^1.2.2",
+    "filesize": "^10.0.6",
+    "fs-extra": "^11.1.0",
+    "p-timeout": "^6.0.0",
+    "playwright": "^1.35.1",
+    "playwright-core": "^1.35.1",
+    "simple-git": "^3.16.0",
+    "simple-statistics": "^7.8.0",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1"
+  },
+  "volta": {
+    "node": "18.16.0"
+  }
+}

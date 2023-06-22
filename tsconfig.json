@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": false,
+    "downlevelIteration": true,
+    "importHelpers": true,
+    "inlineSources": true,
+    "isolatedModules": true,
+    "lib": ["es6", "dom"],
+    "moduleResolution": "node",
+    "noErrorTruncation": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictBindCallApply": false,
+    "target": "es2020",
+    "module": "esnext",
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "declarationMap": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"]
+}
