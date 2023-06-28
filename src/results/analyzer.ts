@@ -66,9 +66,9 @@ export class ResultsAnalyzer {
       }
     };
 
-    pushIfDefined('lcp (mean)', AnalyzerItemUnit.ms, MetricsStats.lcp, MetricsStats.mean);
-    pushIfDefined('lcp (median)', AnalyzerItemUnit.ms, MetricsStats.lcp, MetricsStats.median);
-    pushIfDefined('lcp (stddev)', AnalyzerItemUnit.ms, MetricsStats.lcp, MetricsStats.stddev);
+    pushIfDefined('lcp', AnalyzerItemUnit.ms, MetricsStats.lcp, MetricsStats.mean);
+    // pushIfDefined('lcp (median)', AnalyzerItemUnit.ms, MetricsStats.lcp, MetricsStats.median);
+    // pushIfDefined('lcp (stddev)', AnalyzerItemUnit.ms, MetricsStats.lcp, MetricsStats.stddev);
     pushIfDefined(AnalyzerItemMetric.cls, AnalyzerItemUnit.ms, MetricsStats.cls, MetricsStats.mean);
     pushIfDefined(AnalyzerItemMetric.fid, AnalyzerItemUnit.ms, MetricsStats.fid, MetricsStats.mean);
     pushIfDefined(AnalyzerItemMetric.tbt, AnalyzerItemUnit.ms, MetricsStats.tbt, MetricsStats.mean);

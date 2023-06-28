@@ -16,9 +16,9 @@ type PrintableTable = { [k: string]: any };
 
 export function printStats(items: Metrics[]): void {
   console.table({
-    ['lcp (mean)']: `${MetricsStats.mean(items, MetricsStats.lcp)?.toFixed(2)} ms`,
-    ['lcp (median)']: `${MetricsStats.median(items, MetricsStats.lcp)?.toFixed(2)} ms`,
-    ['lcp (stddev)']: `${MetricsStats.stddev(items, MetricsStats.lcp)?.toFixed(2)} ms`,
+    lcp: `${MetricsStats.mean(items, MetricsStats.lcp)?.toFixed(2)} ms`,
+    // ['lcp (median)']: `${MetricsStats.median(items, MetricsStats.lcp)?.toFixed(2)} ms`,
+    // ['lcp (stddev)']: `${MetricsStats.stddev(items, MetricsStats.lcp)?.toFixed(2)} ms`,
     cls: `${MetricsStats.mean(items, MetricsStats.cls)?.toFixed(2)} ms`,
     fid: `${MetricsStats.mean(items, MetricsStats.fid)?.toFixed(2)} ms`,
     tbt: `${MetricsStats.mean(items, MetricsStats.tbt)?.toFixed(2)} ms`,

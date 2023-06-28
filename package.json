@@ -2,13 +2,13 @@
   "private": true,
   "version": "7.54.0",
   "name": "@sentry-internal/overhead",
-  "main": "lib/index.js",
   "bin": {
     "sentry-overhead": "./bin/cli.mjs"
   },
   "author": "Sentry",
   "license": "MIT",
   "type": "module",
+  "module": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "dev:collect": "ts-node-esm ./configs/dev/collect.ts",

@@ -13,8 +13,6 @@ import type { Scenario, TestCase } from './types.js';
 import { consoleGroup } from './util/console.js';
 import { WebVitals, WebVitalsCollector } from './vitals/index.js';
 
-const networkConditions = 'Fast 3G';
-
 enum NetworkConditions {
   FAST_3G = 'Fast 3G',
   SLOW_3G = 'Slow 3G',
@@ -96,7 +94,7 @@ export class MetricsCollector {
         const scenario = testCase.scenarios[s];
         scenarioResults.push(await this._collect(testCase, scenario.constructor.name, scenario));
       }
-      return new Result(testCase.name, this._options.cpuThrottling, networkConditions, scenarioResults);
+      return new Result(testCase.name, this._options.cpuThrottling, this._options.networkConditions, scenarioResults);
     });
   }
 

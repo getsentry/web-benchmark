@@ -4,16 +4,10 @@ import path from 'node:path';
 import { parseArgs } from "node:util";
 import * as url from 'node:url';
 
-import {MetricsCollector, MetricsStats, printStats} from '../lib/index.js';
+import {Metrics, MetricsCollector, MetricsStats, Result, ResultsAnalyzer, ResultsSet, printStats, printAnalysis} from '../lib/index.js';
 
 // From: https://exploringjs.com/nodejs-shell-scripting/ch_nodejs-path.html#detecting-if-module-is-main
 const modulePath = url.fileURLToPath(import.meta.url);
-if (import.meta.url.startsWith('file:')) { // (A)
-  if (process.argv[1] === modulePath) { // (B)
-    main();
-  }
-}
-
 
 async function main() {
   const options = {
@@ -80,12 +74,12 @@ async function main() {
     },
   });
   
+  result.writeToFile(`out/result-${Date.now()}.json`);
   result.writeToFile('out/latest-result.json');
 
-// const resultsSet = new ResultsSet(outDir);
-// const latestResult = Result.readFromFile(latestResultFile);
-//
-// const analysis = await ResultsAnalyzer.analyze(latestResult, resultsSet);
-// printAnalysis(analysis, latestResult);
+  const resultsSet = new ResultsSet('out/');
+  const analysis = await ResultsAnalyzer.analyze(result, resultsSet);
+  printAnalysis(analysis, result);
 }
 
+main();
