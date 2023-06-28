@@ -11,9 +11,7 @@ Changes in the metrics, compared to previous runs from the main branch, should b
 
 WIP
 
-`npm install @server-internal/overhead`
-
-`./sentry-overhead -f myScenario.js`
+`npx @sentry-internal/overhead -f myScenario.js`
 
 ## Resources
 
