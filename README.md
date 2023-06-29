@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/@sentry-internal/web-benchmark.svg)](https://www.npmjs.com/package/@sentry-internal/web-benchmark)
 [![Discord](https://img.shields.io/discord/621778831602221064)](https://discord.gg/Ww9hbqr)
 
-# Overhead performance metrics
+# web-benchmark
 
 Evaluates Sentry & Replay impact on website performance by running a web app in Chromium via Playwright and collecting various metrics.
 
@@ -16,11 +16,11 @@ For the three scenarios, we collect some metrics (CPU, memory, vitals) and later
 Changes in the metrics, compared to previous runs from the main branch, should be evaluated on case-by-case basis when preparing and reviewing the PR.
 
 
-## Instructions
+## Getting Started
 
 WIP
 
-`npx @sentry-internal/overhead -f myScenario.js`
+`npx @sentry-internal/web-benchmark -f myScenario.js`
 
 ## Resources
 
