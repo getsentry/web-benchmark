@@ -4,10 +4,7 @@ import path from 'node:path';
 import { parseArgs } from "node:util";
 import * as url from 'node:url';
 
-import {Metrics, MetricsCollector, MetricsStats, Result, ResultsAnalyzer, ResultsSet, printStats, printAnalysis} from '../lib/index.js';
-
-// From: https://exploringjs.com/nodejs-shell-scripting/ch_nodejs-path.html#detecting-if-module-is-main
-const modulePath = url.fileURLToPath(import.meta.url);
+import {MetricsCollector, MetricsStats, ResultsAnalyzer, ResultsSet, printStats, printAnalysis} from '../lib/index.js';
 
 async function main() {
   const options = {
@@ -45,7 +42,12 @@ async function main() {
   const modules = await Promise.all(file.map(async f => import(path.resolve('./', f))));
   const scenarios = modules.flatMap(m => Object.values(m))
 
-  const collector = new MetricsCollector();
+  const collector = new MetricsCollector({
+    headless: headless ?? false,
+    cpuThrottling: cpu ? parseFloat(cpu) : false,
+    networkConditions: network,
+  });
+
   const result = await collector.execute({
     name: 'default',
     scenarios: scenarios.map(C => new C()),

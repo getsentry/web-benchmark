@@ -185,7 +185,7 @@ export class MetricsCollector {
           }
 
           if (this._options.cpuThrottling) {
-            await cdp.send('Emulation.setCPUThrottlingRate', { rate: this._options.cpuThrottling });
+            await cdp.send('Emulation.setCPUThrottlingRate', { rate: parseFloat(this._options.cpuThrottling as unknown as string) });
           }
 
           // Collect CPU and memory info 10 times per second.
