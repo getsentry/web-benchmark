@@ -36,14 +36,6 @@ async function main() {
     values: { headless, runs, cpu, network, file },
   } = parseArgs({options});
 
-  console.log({
-    headless,
-    runs,
-    cpu,
-    network,
-    file
-  })
-
   if (!file || file.length < 1) {
     // need file!
     throw new Error('No scenario files given')
