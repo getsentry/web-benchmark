@@ -4,7 +4,7 @@
   </a>
 </p>
 
-[![npm version](https://img.shields.io/npm/v/@sentry-internal/overhead.svg)](https://www.npmjs.com/package/@sentry-internal/overhead)
+[![npm version](https://img.shields.io/npm/v/@sentry-internal/web-benchmark.svg)](https://www.npmjs.com/package/@sentry-internal/web-benchmark)
 [![Discord](https://img.shields.io/discord/621778831602221064)](https://discord.gg/Ww9hbqr)
 
 # Overhead performance metrics
