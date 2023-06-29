@@ -7,7 +7,7 @@ For the three scenarios, we collect some metrics (CPU, memory, vitals) and later
 Changes in the metrics, compared to previous runs from the main branch, should be evaluated on case-by-case basis when preparing and reviewing the PR.
 
 
-## Instructions
+## Getting Started
 
 WIP
 
