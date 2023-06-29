@@ -1,4 +1,4 @@
-# Overhead performance metrics
+# web-benchmark
 
 Evaluates Sentry & Replay impact on website performance by running a web app in Chromium via Playwright and collecting various metrics.
 
@@ -11,7 +11,7 @@ Changes in the metrics, compared to previous runs from the main branch, should b
 
 WIP
 
-`npx @sentry-internal/overhead -f myScenario.js`
+`npx @sentry-internal/web-benchmark -f myScenario.js`
 
 ## Resources
 
