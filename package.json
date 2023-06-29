@@ -8,6 +8,12 @@
   "license": "MIT",
   "type": "module",
   "module": "lib/index.js",
+  "files": [
+    "lib",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "dev:collect": "ts-node-esm ./configs/dev/collect.ts",
