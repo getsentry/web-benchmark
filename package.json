@@ -1,6 +1,6 @@
 {
   "name": "@sentry-internal/web-benchmark",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": {
     "web-benchmark": "./bin/cli.mjs"
   },
