@@ -69,6 +69,7 @@ export interface MetricsCollectorOptions {
   headless: boolean;
   cpuThrottling: false | number;
   networkConditions: false | NetworkConditions;
+  device: keyof typeof playwright.devices | false;
 }
 
 export class MetricsCollector {
@@ -79,6 +80,7 @@ export class MetricsCollector {
       headless: false,
       cpuThrottling: false,
       networkConditions: false,
+      device: false,
       ...options,
     };
   }
@@ -152,9 +154,23 @@ export class MetricsCollector {
           const browser = await playwright.chromium.launch({
             headless: this._options.headless,
           });
-          const context = await browser.newContext({
+          let contextObj = {
             ...(scenario.storageState ? { storageState: scenario.storageState } : {}),
-          });
+          };
+          const { device } = this._options;
+          const _device = (device && playwright.devices[device]) ?? false;
+          if (_device) {
+            contextObj = {
+              ...contextObj,
+              ..._device,
+            };
+          } else {
+            console.log('=================tips==================');
+            console.error(`Device: ${device} not found, please check on https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json`);
+            console.log('page will be loaded with default device: desktop');
+            console.log('=================tips end==================');
+          }
+          const context = await browser.newContext(contextObj);
           disposeCallbacks.push(() => browser.close());
           const page = await context.newPage();
           disposeCallbacks.push(() => page.close());
