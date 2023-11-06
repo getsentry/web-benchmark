@@ -48,6 +48,7 @@ To run:
 | --runs / -c | false    | 1       | The number of times to run the scenario |
 | --cpu       | false    | 1       | The CPU throttle factor. e.g. "2" represents a 2x throttle |
 | --network   | false    | false   | The network speed to emulate (e.g. "Fast 3G" or "Slow 3G") |
+| --device / -d   | false    | false   | The network speed to emulate (e.g. "Iphone 13" or "Desktop Chrome") |
 
 
 ## Resources

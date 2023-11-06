@@ -27,10 +27,14 @@ async function main() {
       short: 'f',
       multiple: true,
     },
+    'device':{
+      type: 'string',
+      short: 'd',
+    }
   }
 
   const {
-    values: { headless, runs, cpu, network, file },
+    values: { headless, runs, cpu, network, file, device },
   } = parseArgs({options});
 
   if (!file || file.length < 1) {
@@ -46,6 +50,7 @@ async function main() {
     headless: headless ?? false,
     cpuThrottling: cpu ? parseFloat(cpu) : false,
     networkConditions: network,
+    device: device,
   });
 
   const result = await collector.execute({
